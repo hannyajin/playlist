@@ -8,7 +8,7 @@ $(function() {
 		name: "default",
 		tracks: [
 			'mourning ritual bad moon rising',
-			'aphex twin avril14th',
+			'Aphex Twin - Avril 14th - Matthias Cover',
 			'laissez moi vanilla'
 		]
 	};
@@ -26,7 +26,6 @@ $(function() {
 
 	iframe.src = "http://w.soundcloud.com/player/?url=https://soundcloud.com/withlovexavier/drake-medley";
 	widget = SC.Widget(iframe);
-
 
 	// get track by name
 	function getTrack(name) {
@@ -52,8 +51,15 @@ $(function() {
 		$('#trackname').text(track.title);
 	}
 
+	function stop() {
+		widget.stop();
+	}
+
+	$('trackInput').on('action' function() {
+		playTrack($('trackInput').text);
+	});
+
 	setTimeout(function() {
-		console.log(tracks[0]);
 		getTrack(tracks[0]);
 	} , 500);
 
