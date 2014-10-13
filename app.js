@@ -55,7 +55,7 @@ $(function() {
 		widget.stop();
 	}
 
-	$('trackInput').on('action' function() {
+	$('trackInput').on('action', function() {
 		playTrack($('trackInput').text);
 	});
 
