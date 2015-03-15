@@ -55,8 +55,16 @@ $(function() {
 		widget.stop();
 	}
 
-	$('trackInput').on('action', function() {
-		playTrack($('trackInput').text);
+	var timeout = null;
+	$('#trackInput').on('input', function() {
+		if (timeout) {
+			clearTimeout(timeout);
+		}
+		var track = $('#trackInput').val();
+
+		timeout = setTimeout(function() {
+			getTrack(track);
+		}, 300);
 	});
 
 	setTimeout(function() {
